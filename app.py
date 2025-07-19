@@ -42,7 +42,7 @@ model, feature_order = load_model()
 # Load weather data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("/Users/saharhty/Documents/wheather-forcast/weather_data.csv")
+    df = pd.read_csv("weather_data.csv")
     df["datetime"] = pd.to_datetime(df["datetime"], errors='coerce')
     df.dropna(subset=["datetime"], inplace=True)
     df["name"] = df["name"].replace("Colonge", "Cologne")
